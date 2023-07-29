@@ -1,0 +1,24 @@
+use mydb;
+CREATE TABLE task (
+    id AUTOINCREMENT PRIMARY KEY,,
+    task_name varchar(100),
+    task_type varchar(50),
+    assignee varchar(100),
+    task_status varchar(50),
+   comments varchar(250),
+  created_date varchar(50),
+  updated_date varchar(50)
+);
+
+
+use mydb;
+CREATE TABLE mydb.archive_task(
+    id int PRIMARY KEY,
+    task_name varchar(100),
+    task_type varchar(50),
+    assignee varchar(100),
+    task_status varchar(50),
+   comments varchar(250),
+  created_date varchar(50),
+  updated_date varchar(50)
+);
