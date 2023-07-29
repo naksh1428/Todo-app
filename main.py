@@ -66,6 +66,14 @@ async def get_todo_list(task_status: str = status_dropdown, db: Session = Depend
         print(f"Exception occurred while extracting task: {e}")
 
 
+@app.get("/api/get-todo-by-id")
+async def get_todo_by_id(task_id: int, db: Session = Depends(get_db)):
+    try:
+        data = crud.get_task_by_id(task_id, db)
+        return data
+    except Exception as e:
+        print(f"Exception occurred while extracting task: {e}")
+
 @app.get("/api/all-todo")
 async def get_all_todo(db: Session = Depends(get_db)):
     try:

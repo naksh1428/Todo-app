@@ -15,6 +15,13 @@ def create_task(db: Session, task_name: str, task_type: str, task_status: str, a
     return t1
 
 
+def get_task_by_id(task_id, db: Session):
+    db_task = db.query(Task).filter(Task.id == task_id).first()
+    if not db_task:
+        return JSONResponse(status_code=HTTPStatus.NOT_FOUND, content={"Message": "Record Not Found"})
+    return db_task
+
+
 def update_task(db:Session, new_task, new_date):
     new_task = new_task.dict(exclude_unset=True)
     db_task = db.query(Task).filter(Task.id == new_task["id"]).first()
