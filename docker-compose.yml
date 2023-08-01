@@ -2,6 +2,8 @@ version: '3'
 services:
   core_api:
     build: .
-    container_name: "do-do-app-container"
+    container_name: "to-do-app-container"
     ports:
-          - "8000:8000"
+          - "8000:15401"
+    volumes:
+      - ./app/:/app
