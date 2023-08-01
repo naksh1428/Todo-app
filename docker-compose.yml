@@ -4,6 +4,6 @@ services:
     build: .
     container_name: "to-do-app-container"
     ports:
-          - "8000:15401"
+          - "8000:8000"
     volumes:
       - ./app/:/app
